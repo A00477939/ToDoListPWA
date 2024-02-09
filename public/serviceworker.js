@@ -1,10 +1,13 @@
+
+
 self.addEventListener("install", function (event) {
     event.waitUntil(
       caches.open("my-cache-name").then(function (cache) {
         cache.addAll([
           "/",
           "./index.html",
-          "../src"
+          "../src",
+          "../src/db.js"
         ]);
       })
     );
