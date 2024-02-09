@@ -1,0 +1,30 @@
+{
+  "name": "To Do list as Progressive Web App",
+  "short_name": "TODO",
+  "icons": [
+    {
+      "src": "./Image/180 × 180.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    },
+    {
+      "src": "./Image/192 × 192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "./Image/512 × 512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#fff",
+  "theme_color": "#3f51b5",
+  "description": "A simple To Do List.",
+  "dir": "ltr",
+  "lang": "en-US"
+}
