@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { addListToDB, getAllListFromDB, removeTask, updateStatusInDB, updatepriorityInDB } from "./db";
 
 export default function App() {
-  const [newItem, setNewItem] = useState("Drink more Water");
+  const [newItem, setNewItem] = useState("");
   const [tolist, setTolist] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
