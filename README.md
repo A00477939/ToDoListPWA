@@ -22,9 +22,9 @@ note:- Might not be live after few days.
 
 
 Features 
-Add:- User will able add task.
-Delete:- user will able to delete task using delete icon
-Priority:- User will able to change task Priority 
-Check :- User will able to mark a task and unmarked it
-Drink more Water is default task
+1) Add:- User will able add task.
+2) Delete:- user will able to delete task using delete icon
+3) Priority:- User will able to change task Priority 
+4) Check :- User will able to mark a task and unmarked it
+5) Drink more Water is default task
 
