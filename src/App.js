@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { addListToDB, getAllListFromDB, removeTask } from "./db";
+import { addListToDB, getAllListFromDB, removeTask, updateStatusInDB, updatepriorityInDB } from "./db";
 
 export default function App() {
   const [newItem, setNewItem] = useState("Drink more Water");
   const [tolist, setTolist] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  //Fetching Data
   useEffect(() => {
     async function fetchData() {
       try {
@@ -21,8 +22,9 @@ export default function App() {
   }, []);
 
   async function submitRequest(e) {
-    e.preventDefault(); // Prevent page refresh
+    e.preventDefault(); // Prevent page to refresh
     const rand = Math.floor(Math.random() * 100);
+
     // Add new list item to the database
     await addListToDB(rand, newItem, false, "Low");
 
@@ -35,21 +37,28 @@ export default function App() {
     setNewItem("");
   }
 
+
   async function deleteItem(id) {
     // Remove task from the database
     await removeTask(id);
 
-    // Update UI by removing the task from the list
+    // Update UI by removing the task 
     setTolist((currentToList) => currentToList.filter((item) => item.id !== id));
   }
 
-  function handleCheckboxChange(id) {
+  async function handleCheckboxChange(id,status) {
+    await updateStatusInDB(id,status);
+
     setTolist((currentToList) => currentToList.map((item) =>
       item.id === id ? { ...item, status: !item.status } : item
     ));
   }
 
-  function handlePriorityChange(id, priority) {
+
+  async function handlePriorityChange(id, priority) {
+
+    await updatepriorityInDB(id,priority);
+
     setTolist((currentToList) => currentToList.map((item) =>
       item.id === id ? { ...item, priority: priority } : item
     ));
@@ -80,7 +89,7 @@ export default function App() {
                 <input
                   type="checkbox"
                   checked={todo.status}
-                  onChange={() => handleCheckboxChange(todo.id)}
+                  onChange={() => handleCheckboxChange(todo.id,todo.status)}
                   className="checkStatus"
                 />
                 <select

@@ -9,6 +9,7 @@ db.version(1).stores({
 });
 
 
+// Add to Database
 function addListToDB(id, title, status, priority) {
     db.list
       .put({id,title,status,priority})
@@ -18,9 +19,10 @@ function addListToDB(id, title, status, priority) {
       });
   }
 
+
+// Fetch all data from database
   function getAllListFromDB() {
     if (db && db.list) {
-      // check if db and the students table are created
       return db.list.toArray().then((data) => {
         return data;
       });
@@ -29,7 +31,7 @@ function addListToDB(id, title, status, priority) {
     }
   }
 
-
+//Delete the task
   function removeTask(id) {
     return db.list.delete(id)
       .then(() => {
@@ -43,10 +45,42 @@ function addListToDB(id, title, status, priority) {
         return false;
       });
   }
+
+  //Update the status
+
+  function updateStatusInDB(id, status) {
+    return db.list.update(id, { status: !status }).then(function (updated) {
+      if (updated)
+        console.log("Updated successfully");
+      else
+        console.log("Failed to update");
+    });
+  }
+
+
+  //Update the priority
+
+  function updatepriorityInDB(id, priority) {
+    return db.list.update(id, { priority: priority }).then(function (updated) {
+      if (updated)
+        console.log("Updated successfully");
+      else
+        console.log("Failed to update");
+    });
+  }
   
+  
+
+
+
+
 
 export { addListToDB };
 export { getAllListFromDB };
 export { removeTask };
+export { updateStatusInDB };
+export { updatepriorityInDB };
+
+
 
 
