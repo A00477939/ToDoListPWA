@@ -19,6 +19,7 @@ Structure
 Deployed link
 => https://65c6c0518e861209126cddd1--zesty-heliotrope-91140f.netlify.app/
 note:- Might not be live after few days.
+Drink more Water is default task in the Deployed application only.
 
 
 Features 
@@ -26,5 +27,5 @@ Features
 2) Delete:- user will able to delete task using delete icon
 3) Priority:- User will able to change task Priority 
 4) Check :- User will able to mark a task and unmarked it
-5) Drink more Water is default task
+
 
