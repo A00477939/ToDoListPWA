@@ -1,5 +1,5 @@
 import React from 'react';
-import './index.css'; // Assuming you have a CSS file for styling
+import './index.css'; 
 import logo from "./Image/512 × 512.png";
 
 const ImageGradient = () => {
