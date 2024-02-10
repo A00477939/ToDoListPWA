@@ -2,8 +2,9 @@ Instruction
 
 Build the project
 
-1) Clone the project 
-2) In terminal use command:- 
+1) Clone the project
+2) cd ToDoListPWA
+3) In terminal use command:- 
     a) npm install
     b) npm install dexie
     c) npm start
